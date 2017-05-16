@@ -1,0 +1,154 @@
+
+/*Styling of Green home practices zip codes*/
+
+Map {
+  buffer-size:256;
+}
+
+
+#Green-home-zips {
+  line-color:#0d0d0d;
+  line-width:1;
+  polygon-opacity:1;
+  polygon-fill:#fff
+    }
+
+  @line: #000;
+  @shade0: #ffffd9;
+  @shade1: #edf8b1;
+  @shade2: #c7e9b4;
+  @shade3: #7fcdbb;
+  @shade4: #41b6c4;
+  @shade5: #1d91c0;
+  @shade6: #225ea8;
+  @shade7: #0c2c84;
+  
+ #Green-home-zips {
+  line-color:@line;
+  line-width: .3;
+  polygon-fill: @shade0;
+  polygon-opacity:1;
+   
+    ["Green Pr_6" >= 1]["Green Pr_6" < 6] { polygon-fill: @shade0; }
+    ["Green Pr_6" >= 6]["Green Pr_6" < 25] { polygon-fill: @shade1; }
+    ["Green Pr_6" >= 25]["Green Pr_6" < 70] { polygon-fill: @shade2; }
+    ["Green Pr_6" >= 70]["Green Pr_6" < 170] { polygon-fill: @shade3; }
+    ["Green Pr_6" >= 170]["Green Pr_6" < 320] { polygon-fill: @shade4; }
+    ["Green Pr_6" >= 320]["Green Pr_6" < 525] { polygon-fill: @shade5; }
+    ["Green Pr_6" >= 525]["Green Pr_6" < 950] { polygon-fill: @shade6; }
+    ["Green Pr_6" >= 950]{ polygon-fill: @shade7; }
+    [zoom > 10] {line-width:1;}
+  
+}
+  
+@futura_med: "Futura Medium","Function Pro Medium","Ubuntu Regular","Trebuchet MS Regular","DejaVu Sans Book";
+
+#Green-home-zips
+
+#Green-home-zips [zoom>6]{
+  text-name: [Zipcode];
+  text-face-name: @futura_med;
+  text-fill: #036;
+  text-size: 8;
+  text-halo-fill:fadeout(white,30%);
+  text-halo-radius:2.0;
+  text-allow-overlap:false;
+  text-clip: false;
+  text-avoid-edges: true;
+  text-placement-type: simple;
+  text-label-position-tolerance:5;
+  text-min-distance:10;
+  
+   [ALAND10>536275399][zoom> 7] {
+    text-name: "[Zipcode]";
+   
+  [ALAND10>= 208971715][ALAND10 < 536275399][zoom> 10] {
+    text-name: "[Zipcode]";
+    text-size:8;
+      
+  [ALAND10>= 19775154][ALAND10 < 208971715][zoom> 13] {
+    text-name: "[Zipcode]";
+    text-face-name: @futura_med;
+    text-size:8;
+        
+  [ALAND10>= 104882][ALAND10 < 19775154][zoom> 16] {
+    text-name: "[Zipcode]";
+    text-face-name: @futura_med;
+    text-size:8;
+  }
+   
+
+}
+}}}
+
+
+
+
+/* Legend*/
+
+<div class='my-legend'>
+<div class='legend-title'>Total # of Green Home Practices </div>
+<div class='legend-scale'>
+  <ul class='legend-labels'>
+    <li><span style='background:#ffffd9;'></span>1-6</li>
+    <li><span style='background:#edf8b1;'></span>7-25</li>
+    <li><span style='background:#c7e9b4;'></span>26-70</li>
+    <li><span style='background:#7fcdbb;'></span>71-170</li>
+    <li><span style='background:#41b6c4;'></span>171-320</li>
+    <li><span style='background:#1d91c0;'></span>321-525</li>
+    <li><span style='background:#225ea8;'></span>526-950</li>
+    <li><span style='background:#0c2c84;'></span>950-3500</li>
+    
+  </ul>
+</div>
+<div class='legend-source'>Source: <a href="#link to source">Name of source</a></div>
+</div>
+
+<style type='text/css'>
+  .my-legend .legend-title {
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 90%;
+    }
+  .my-legend .legend-scale ul {
+    margin: 0;
+    padding: 0;
+    float: left;
+    list-style: none;
+    }
+  .my-legend .legend-scale ul li {
+    display: block;
+    float: left;
+    width: 50px;
+    margin-bottom: 6px;
+    text-align: center;
+    font-size: 80%;
+    list-style: none;
+    }
+  .my-legend ul.legend-labels li span {
+    display: block;
+    float: left;
+    height: 15px;
+    width: 50px;
+    }
+  .my-legend .legend-source {
+    font-size: 70%;
+    color: #999;
+    clear: both;
+    }
+  .my-legend a {
+    color: #777;
+    }
+</style>
+
+
+
+/* Teaser*/
+
+TOTAL Green Home Practices in {{{Zipcode}}}  : <b> {{{Green Pr_6}}} </b> <br/> 
+# of GPR Homes in {{{Zipcode}}} : <b> {{{Green Pr_2}}} </b> <br/> 
+# of Solar Thermal Homes in {{{Zipcode}}} : <b> {{{Green Pr_3}}} </b> <br/> 
+# of Solar Photovoltaics in {{{Zipcode}}} : <b> {{{Green Pr_4}}} </b> <br/> 
+# of LEED Homes in {{{Zipcode}}} : <b> {{{Green Pr_5}}} </b>
+
